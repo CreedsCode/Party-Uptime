@@ -1,25 +1,66 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Countdown</title>
-    </head>
-    <body>
-        <div id="ClockDisplay"></div>
-        <script type="text/javascript">
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+    <title>Clock-RUNNS!</title>
+    <style>
+    button {
+        -webkit-transition-duration: 0.4s; 
+        transition-duration: 0.4s;
+    }
+    button:active {
+        background-color: #2980b9; 
+        color: white;
+    }
+    .bbutton {
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        background-color: #c0392b; 
+        border: none;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 560%;
+    }
+    .abutton {
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        background-color: #27ae60; 
+        border: none;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 560%;
+    }
+    body{
+        background: #34495e;
+    }
+    .clock{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        color: #e74c3c;
+        font-size: 950%;
+        font-family: 'Orbitron', sans-serif;
+    }
+    </style>
+</head>
+<body>
+    <p><span id="timer" class="clock">00:00:00</span></p>
+    <div>
+        <button id="control" onclick="changeState();" class="abutton">Start</button>
+        
+    </div>
+    <script type="text/javascript" src="timer.js"></script>
+</body>
 
-            function showTime(){
-                var date = new Date();
-                var h = date.getHours();
-                var m = date.getMinutes();
-                var s = date.getSeconds();
-
-                var time = h + ":" + m + ":" + s;
-                document.getElementById("ClockDisplay").innerText = time;
-                document.getElementById("ClockDisplay").textContent = time;
-            }
-
-            setInterval(showTime, 1000)
-
-        </script>
-    </body>
 </html>
