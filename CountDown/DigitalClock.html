@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Countdown</title>
+    </head>
+    <body>
+        <div id="ClockDisplay"></div>
+        <script type="text/javascript">
+
+            function showTime(){
+                var date = new Date();
+                var h = date.getHours();
+                var m = date.getMinutes();
+                var s = date.getSeconds();
+
+                var time = h + ":" + m + ":" + s;
+                document.getElementById("ClockDisplay").innerText = time;
+                document.getElementById("ClockDisplay").textContent = time;
+            }
+
+        </script>
+    </body>
+</html>
