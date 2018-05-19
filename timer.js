@@ -1,7 +1,7 @@
 var active = false;
 
 var fxparty = new Audio('soundfxparty.mp3');
-var fxapplause = new Audio('soundapplause.mp3');
+var fxapplause = new Audio('soundfxapplause.mp3');
 
 function play_sound(wich){
     if(wich == 1){
@@ -21,6 +21,8 @@ function start_timer(){
         var hour = arr[0];
         var min = arr[1];
         var sec = arr[2];
+
+        var _hour = 0;
 
         if(sec == 59){
             if(min == 59){
