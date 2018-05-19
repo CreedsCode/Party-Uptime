@@ -1,9 +1,16 @@
 var active = false;
 
-var fx = new Audio('soundfx.mp3');
+var fxparty = new Audio('soundfxparty.mp3');
+var fxapplause = new Audio('soundapplause.mp3');
 
-function play_sound(){
-    fx.play();
+function play_sound(wich){
+    if(wich == 1){
+        fxparty.play();
+    } else {
+        if(wich == 2){
+            fxapplause.play();
+        }
+    }
 }
 
 
@@ -17,8 +24,13 @@ function start_timer(){
 
         if(sec == 59){
             if(min == 59){
-                play_sound()
                 hour++;
+                _hour++;
+                play_sound(1);
+                if(_hour == 5){
+                    play_sound(2);
+                    _hour = 0;
+                }
                 min = 0;
                 if (hour < 10) hour = "0" + hour;
             }else{
