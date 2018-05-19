@@ -1,5 +1,12 @@
 var active = false;
 
+var fx = new Audio('soundfx.mp3');
+
+function play_sound(){
+    fx.play();
+}
+
+
 function start_timer(){
     if(active){
         var timer = document.getElementById("timer").innerHTML;
@@ -10,6 +17,7 @@ function start_timer(){
 
         if(sec == 59){
             if(min == 59){
+                play_sound()
                 hour++;
                 min = 0;
                 if (hour < 10) hour = "0" + hour;
